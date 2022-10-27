@@ -1,0 +1,31 @@
+<%- include("../layout/header") %>
+<h1>Add New User</h1>
+
+<form method ="post" enctype="multipart/form-data">
+    <div>
+        <input type="text" placeholder="Enter name" name="name" size="40" required/>
+      </div>
+      <br />
+      <div>
+        <input type="email" placeholder="Enter email" name="email" size="40" required />
+      </div>
+      <br />
+
+      <div>
+     <input type="password" placeholder="password" name="password" required/>
+      </div>
+      <br />
+      <div>
+        <input type="file"  name="image" required/>
+      </div>
+      <br />
+      <div>
+        <button type="submit">Add Newuser</button>
+      </div>
+      
+</form>
+<%if(typeof message !== 'undefined'){%>
+  <h4 style="color:green"><%=message%></h4>
+<%}%>
+<%- include("../layout/footer") %>
+

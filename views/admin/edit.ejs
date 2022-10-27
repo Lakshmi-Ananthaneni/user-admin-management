@@ -1,0 +1,45 @@
+<%- include("../layout/header") %>
+<h1>Edit User by Admin</h1>
+
+<form method ="post" enctype="multipart/form-data">
+    <div>
+        <input type="text" placeholder="Enter name" 
+        name="name" value="<%=user.name%>" size="40" required/>
+      </div>
+      <br />
+      <div>
+        <input type="email" placeholder="Enter email" 
+        name="email" value="<%=user.email%>" size="40" required />
+      </div>
+      <br />
+      <div>
+        <input type="file"  name="image"   required/>
+      </div>
+      <br />
+      <div>
+        <label for="verify">Verified:</label>
+        <input type="radio" name="verify" value="1"
+        <% if(user.isVerify === 1){ %>
+          checked
+          <%}%> />
+      </div>
+      <br />
+      <div>
+        <label for="verify">Not Verified:</label>
+        <input type="radio" name="verify" value="0" 
+        <% if(user.isVerify === 0){ %>
+          checked
+          <%}%> />
+      </div>
+      <br />
+      
+      <div>
+        <button type="submit">Update Profile</button>
+      </div>
+      
+</form>
+<%if(typeof message !== 'undefined'){%>
+  <h4 style="color:green"><%=message%></h4>
+<%}%>
+<%- include("../layout/footer") %>
+

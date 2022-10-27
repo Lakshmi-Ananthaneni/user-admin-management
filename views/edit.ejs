@@ -1,0 +1,30 @@
+<%- include("./layout/header") %>
+<h1>Edit Profile</h1>
+
+<form method ="post" enctype="multipart/form-data">
+    <div>
+        <input type="text" placeholder="Enter name" 
+        name="name" value="<%=user.name%>" size="40" required/>
+      </div>
+      <br />
+
+      <div>
+        <input type="email" placeholder="Enter email" 
+        name="email" value="<%=user.email%>" size="40" required />
+      </div>
+      <br />
+      <div>
+        <input type="file"  name="image"   required/>
+      </div>
+      <br />
+      <input type="hidden" name="user_id" value="<%=user._id%>" />
+      <div>
+        <button type="submit">Update Profile</button>
+      </div>
+      
+</form>
+<%if(typeof message !== 'undefined'){%>
+  <h4 style="color:green"><%=message%></h4>
+<%}%>
+<%- include("./layout/footer") %>
+
